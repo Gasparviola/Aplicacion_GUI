@@ -1,6 +1,8 @@
 
 package aplicacion_giu;
 
+import javax.swing.JOptionPane;
+
 public class Aplicacion_GIU_Form extends javax.swing.JFrame {
 
     /**
@@ -22,8 +24,8 @@ public class Aplicacion_GIU_Form extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        jTextUsers = new javax.swing.JTextField();
+        jTextPass = new javax.swing.JTextField();
         btnIniciarSesion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -34,9 +36,9 @@ public class Aplicacion_GIU_Form extends javax.swing.JFrame {
 
         jLabel2.setText("Contraseña:");
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        jTextPass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                jTextPassActionPerformed(evt);
             }
         });
 
@@ -58,8 +60,8 @@ public class Aplicacion_GIU_Form extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextUsers, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextPass, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(99, 99, 99))
             .addGroup(layout.createSequentialGroup()
                 .addGap(143, 143, 143)
@@ -72,10 +74,10 @@ public class Aplicacion_GIU_Form extends javax.swing.JFrame {
                 .addGap(73, 73, 73)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextUsers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(39, 39, 39)
                 .addComponent(btnIniciarSesion)
@@ -87,11 +89,17 @@ public class Aplicacion_GIU_Form extends javax.swing.JFrame {
 
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
         // TODO add your handling code here:
+        
+        if(jTextUsers.getText().equals("alumno@ulp.edu.ar") && jTextPass.getText().equals("12345678")){
+            JOptionPane.showMessageDialog(this, "Usuario y Contraseña Correcto");
+        }else{
+            JOptionPane.showMessageDialog(this, "Usuario y/o Contraseña Incorrecto");
+        }
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void jTextPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextPassActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_jTextPassActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -129,7 +137,7 @@ public class Aplicacion_GIU_Form extends javax.swing.JFrame {
     private javax.swing.JButton btnIniciarSesion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextPass;
+    private javax.swing.JTextField jTextUsers;
     // End of variables declaration//GEN-END:variables
 }
